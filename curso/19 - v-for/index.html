@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>19 - v-for</title>
+</head>
+<body>
+
+	<div id="app">
+		<div v-for="(post, index) in posts" :key="post.id">
+			<h1>{{ index }} - {{ post.title }}</h1>
+			<p>{{ post.content }}</p>
+			<hr>
+		</div>
+	</div>
+
+	<script src="https://unpkg.com/vue@next"></script>
+
+	<script>
+		
+		const app = Vue.createApp({
+			data () {
+				return {
+					posts: [
+						{id: 1, title: 'Post 1', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel dui facilisis, tempor augue ac, volutpat nunc. Vestibulum vitae ligula bibendum, varius purus ut, sodales nulla. '},
+						{id: 2, title: 'Post 2', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel dui facilisis, tempor augue ac, volutpat nunc. Vestibulum vitae ligula bibendum, varius purus ut, sodales nulla. '},
+						{id: 3, title: 'Post 3', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel dui facilisis, tempor augue ac, volutpat nunc. Vestibulum vitae ligula bibendum, varius purus ut, sodales nulla. '},
+						{id: 4, title: 'Post 4', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel dui facilisis, tempor augue ac, volutpat nunc. Vestibulum vitae ligula bibendum, varius purus ut, sodales nulla. '},
+						{id: 5, title: 'Post 5', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel dui facilisis, tempor augue ac, volutpat nunc. Vestibulum vitae ligula bibendum, varius purus ut, sodales nulla. '}
+					]
+				}
+			}
+		});
+
+		const vm = app.mount('#app');
+
+	</script>
+
+</body>
+</html>

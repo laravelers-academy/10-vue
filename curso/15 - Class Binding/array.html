@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>15 - Class Binding</title>
+	<style>
+		.active {
+			color: green;
+		}
+
+		.error {
+			color: red;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="app">
+		<p :class="[ hasError ?  error : active ]">Hola</p>
+	</div>
+
+	<script src="https://unpkg.com/vue@next"></script>
+
+	<script>
+		
+		const app = Vue.createApp({
+			data () {
+				return {
+					hasError: true,
+					active: 'active',
+					error: 'error'
+				}
+			}
+		});
+
+		const vm = app.mount('#app');
+
+
+	</script>
+
+</body>
+</html>

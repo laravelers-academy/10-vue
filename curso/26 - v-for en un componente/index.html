@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>24 - v-for en un componente</title>
+</head>
+<body>
+
+	<div id="app">
+		<my-component 
+			v-for="item in items"
+			:key="item.id"
+			:object="item"></my-component>
+	</div>
+
+	<script src="https://unpkg.com/vue@next"></script>
+
+	<script>
+		
+		const app = Vue.createApp({
+			data() {
+				return {
+					items: [
+						{id: 1, text: 'Hola mundo'},
+						{id: 2, text: 'Hola Homero'},
+						{id: 3, text: 'Hola Raul'},
+						{id: 4, text: 'Hola Nancy'}
+					],
+				}
+			}
+		});
+
+		app.component('my-component', {
+			props: ['object'],
+			template: `<p>{{ object.text }}</p>`
+		});
+
+		const vm = app.mount('#app');
+
+
+	</script>
+
+</body>
+</html>

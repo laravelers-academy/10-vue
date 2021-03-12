@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<div id="app">
+			<p> {{ fullName }} </p>
+		</div>
+		<script src="https://unpkg.com/vue@3.0.5/dist/vue.global.prod.js"></script>
+		<script>
+			const app = Vue.createApp({
+				data() {
+					return {
+						name: 'Homero Raul',
+						lastName: 'Vargas Cruz'
+					}
+				}, 
+				computed: {
+					fullName: {
+
+						get(){
+							return this.name + ' ' + this.lastName;	
+						},
+
+						set(name) {
+							this.name = name.firstName;
+							this.lastName = name.lastName;
+						}
+						
+					}
+				}
+			}).mount('#app');
+		</script>
+	</body>
+</html>

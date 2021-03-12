@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>10 - Propiedades de datos</title>
+</head>
+<body>
+
+	<div id="app">
+
+		{{ hola }}
+
+		<p v-html="hola"></p>
+	</div>
+
+	<script src="https://unpkg.com/vue@next"></script>
+
+	<script>
+		
+		const app = Vue.createApp({
+			data () {
+				return {
+					hola: '<p style="color: red;">Hola a todos</p>',
+					adios: null,
+				}
+			}
+		});
+
+		const vm = app.mount('#app');
+
+
+	</script>
+
+</body>
+</html>

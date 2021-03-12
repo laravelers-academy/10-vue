@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>28 - Modificadores </title>
+</head>
+<body>
+
+	<div id="app">
+
+		<form @submit.prevent.stop="submitForm()">
+
+			<input type="text" name="foo" @keyup.alt.enter.exact="pressEnter()">
+			
+			<input type="submit" name="" value="Enviar">	
+
+		</form>
+		
+	</div>
+
+	<script src="https://unpkg.com/vue@next"></script>
+
+	<script>
+		
+		const app = Vue.createApp({
+			data() {
+				return {}
+			},
+			methods: {
+				submitForm(){
+					console.log('Enviar formulario');
+				},
+				pressEnter(){
+					console.log('Se dió clic en Enter');
+				}
+			}
+		});
+
+		const vm = app.mount('#app');
+
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>4 - Componente raíz</title>
+</head>
+<body>
+
+	<div id="app">
+		{{ hola }}
+
+		<p v-html="hola"></p>
+	</div>
+
+	<script src="https://unpkg.com/vue@next"></script>
+
+	<script>
+		
+		const app = Vue.createApp({
+			data () {
+				return {
+					hola: '<p style="color: red;">Hola a todos</p>'
+				}
+			}
+		});
+
+		const vm = app.mount('#app');
+
+
+	</script>
+
+</body>
+</html>

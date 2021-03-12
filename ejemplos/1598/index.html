@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+
+		<div id="app">
+			<ul>
+				<li v-for="(value, name, index) in myObject">
+					{{index}} - {{name}} : {{ value }}
+				</li>
+			</ul>
+		</div>
+		
+		<script src="https://unpkg.com/vue@3.0.5/dist/vue.global.prod.js"></script>
+
+		<script>
+
+			const app = Vue.createApp({
+				data () {
+					return {
+						myObject: {
+							name: 'Homero',
+							age: 28,
+							birthday: '29/06/1992'
+						} 
+					}
+				},
+			}).mount('#app');
+
+		</script>
+	</body>
+</html>

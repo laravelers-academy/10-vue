@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>29 - v-model </title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<div id="app">
+
+		<select v-model="names" multiple>
+			<option value="Raul">Raul</option>
+			<option value="Jesús">Jesús</option>
+			<option value="Ulises">Ulises</option>
+		</select>
+
+		<p>
+			{{ names }}
+		</p>
+		
+	</div>
+
+	<script src="https://unpkg.com/vue@next"></script>
+
+	<script>
+		
+		const app = Vue.createApp({
+			data() {
+				return {
+					names: ''
+				}
+			}
+		});
+
+		const vm = app.mount('#app');
+
+
+	</script>
+
+</body>
+</html>

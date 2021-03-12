@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Saludo y Despedida</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<div id="app">
+			<search-component></search-component>
+		</div>
+		<script src="https://unpkg.com/vue@3.0.5/dist/vue.global.js"></script>
+		<script>
+			const app = Vue.createApp({});
+
+			app.component('SearchComponent', {
+				data() {
+					return {
+						results: 0,
+					}
+				},
+				template: `
+					<p>Se encontraron {{ results }} posts</p>
+					<filter-component
+						@getResult="showResults"></filter-component>
+				`,
+				methods: {
+					showResults(results) 
+					{	
+						this.results += results;
+					}
+				}
+			});
+
+			app.component('FilterComponent', {
+				template: `
+					<button @click="$emit('getResult', 3)">Cargar resultados</button>
+				`
+			});
+
+			app.mount('#app');
+		</script>
+	</body>
+</html>

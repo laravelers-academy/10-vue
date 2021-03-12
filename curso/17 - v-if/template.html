@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>17 - v-if</title>
+</head>
+<body>
+
+	<div id="app">
+		<template v-if="ok">
+			<h1> Hola desde un template</h1>
+			<p>Mi nombre es Homero</p>
+			<p>Tengo 28 años</p>
+		</template>
+	</div>
+
+	<script src="https://unpkg.com/vue@next"></script>
+
+	<script>
+		
+		const app = Vue.createApp({
+			data () {
+				return {
+					ok: true
+				}
+			}
+		});
+
+		const vm = app.mount('#app');
+
+	</script>
+
+</body>
+</html>

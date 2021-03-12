@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Saludo y Despedida</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<div id="app">
+			<title-component title="Mi título"></title-component>
+		</div>
+		<script src="https://unpkg.com/vue@3.0.5/dist/vue.global.js"></script>
+		<script>
+			const app = Vue.createApp({});
+
+			app.component('TitleComponent', {
+				props: ['title'],
+				template: `<h4>{{ title }}</h4>`
+			});
+
+			app.mount('#app');
+		</script>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>11 - Métodos</title>
+</head>
+<body>
+
+	<div id="app">	
+		<button @click="showAlert">Mostrar alerta</button>
+	</div>
+
+	<script src="https://unpkg.com/vue@next"></script>
+
+	<script>
+		
+		const app = Vue.createApp({
+			data () {
+				return {
+					name: 'Homero'
+				}
+			},
+			methods: {
+				showAlert() {
+
+					this.changeName('Raul');
+
+					alert('Hola ' + this.name);
+				},
+				changeName(name) {
+
+					this.name = name;
+					
+				}
+			}
+		});
+
+		const vm = app.mount('#app');
+
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>29 - v-model </title>
+</head>
+<body>
+
+	<div id="app">
+
+		<input type="checkbox" id="checkbox_jorge" v-model="names" value="Jorge">
+		<label for="checkbox_jorge">Jorge</label>
+
+		<input type="checkbox" id="checkbox_raul" v-model="names" value="Raul">
+		<label for="checkbox_raul">Raul</label>
+
+		<input type="checkbox" id="checkbox_jesus" v-model="names" value="Jesús">
+		<label for="checkbox_jesus">Jesús</label>
+
+		<p>
+			
+			{{ names }}
+
+		</p>
+		
+	</div>
+
+	<script src="https://unpkg.com/vue@next"></script>
+
+	<script>
+		
+		const app = Vue.createApp({
+			data() {
+				return {
+					names: []
+				}
+			}
+		});
+
+		const vm = app.mount('#app');
+
+
+	</script>
+
+</body>
+</html>

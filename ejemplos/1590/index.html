@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+
+		<div id="app">
+
+			<ul>
+				<li><a href="#" @click="setComponent('home')">Inicio</a></li>
+				<li><a href="#" @click="setComponent('about')">Acerca</a></li>
+				<li><a href="#" @click="setComponent('contact')">Contacto</a></li>
+			</ul>
+
+			<hr />
+
+			<component :is="currentComponent"></component>
+
+		</div>
+		
+		<script src="https://unpkg.com/vue@3.0.5/dist/vue.global.prod.js"></script>
+
+		<script>
+
+			const app = Vue.createApp({
+				data () {
+					return {
+						component: 'home'
+					}
+				},
+				computed: {
+					currentComponent () {
+						return this.component + '-component';
+					}
+				},
+				methods: {
+					setComponent (value) {
+						this.component = value;
+					}
+				}
+			});
+
+			app.component('home-component', {
+				template: `
+					Se está monstrando: home-component
+				`
+			});	
+
+			app.component('about-component', {
+				template: `
+					Se está monstrando: about-component
+				`
+			});	
+
+			app.component('contact-component', {
+				template: `
+					Se está monstrando: contact-component
+				`
+			});	
+
+			app.mount('#app');
+
+		</script>
+	</body>
+</html>

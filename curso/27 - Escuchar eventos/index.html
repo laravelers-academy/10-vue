@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>27 - Escuchar eventos </title>
+</head>
+<body>
+
+	<div id="app">
+
+		<p>{{ count }}</p>
+
+		<button @click="incrementCount(3, $event), showAlert()">Contar</button>
+		
+	</div>
+
+	<script src="https://unpkg.com/vue@next"></script>
+
+	<script>
+		
+		const app = Vue.createApp({
+			data() {
+				return {
+					count: 0
+				}
+			},
+			methods: {
+				incrementCount(number, $event){
+					this.count += number;
+
+					console.log($event);
+				},
+				showAlert() {
+					alert('Hi');
+				}
+			}
+		});
+
+		const vm = app.mount('#app');
+
+
+	</script>
+
+</body>
+</html>

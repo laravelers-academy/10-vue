@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>18 - v-show</title>
+</head>
+<body>
+
+	<div id="app">
+		
+		<p v-show="ok">esto es con v-show</p>
+		<p v-if="ok">Esto es con v-if</p>
+
+	</div>
+
+	<script src="https://unpkg.com/vue@next"></script>
+
+	<script>
+		
+		const app = Vue.createApp({
+			data () {
+				return {
+					ok: true
+				}
+			}
+		});
+
+		const vm = app.mount('#app');
+
+	</script>
+
+</body>
+</html>

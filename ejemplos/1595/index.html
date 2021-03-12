@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+
+		<div id="app">
+
+			<p>Cuenta: {{ count }}</p>
+
+			<button @click="increaseAccount(), showAlert()">Aumentar cuenta</button>
+
+
+		</div>
+		
+		<script src="https://unpkg.com/vue@3.0.5/dist/vue.global.prod.js"></script>
+
+		<script>
+
+const app = Vue.createApp({
+	data () {
+		return {
+			count: 0
+		}
+	},
+	methods: {
+		increaseAccount() {
+
+			this.count += 1;
+
+		},
+		showAlert () {
+			alert('Hi')
+		}
+	}
+}).mount('#app');
+
+		</script>
+	</body>
+</html>

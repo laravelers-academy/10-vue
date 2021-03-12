@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>29 - v-model </title>
+</head>
+<body>
+
+	<div id="app">
+
+		<input type="text" name="message" v-model="message">
+
+		<p>
+			
+			{{ message }}
+
+		</p>
+		
+	</div>
+
+	<script src="https://unpkg.com/vue@next"></script>
+
+	<script>
+		
+		const app = Vue.createApp({
+			data() {
+				return {
+					message: ''
+				}
+			}
+		});
+
+		const vm = app.mount('#app');
+
+
+	</script>
+
+</body>
+</html>

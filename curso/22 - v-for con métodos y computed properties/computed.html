@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>22 - v-for con métodos y computed properties</title>
+</head>
+<body>
+
+	<div id="app">
+		<ul>
+			<li v-for="item in sortedItems">
+				{{ item }}
+			</li>
+		</ul>
+	</div>
+
+	<script src="https://unpkg.com/vue@next"></script>
+
+	<script>
+		
+		const app = Vue.createApp({
+			data() {
+				return {
+					items: [1,9,5,3,6,7,4,0]
+				}
+			},
+			computed: {
+				sortedItems() {
+					return this.items.sort();
+				}
+			}
+		});
+
+		const vm = app.mount('#app');
+
+
+	</script>
+
+</body>
+</html>

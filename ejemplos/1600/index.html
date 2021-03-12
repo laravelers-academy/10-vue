@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<div id="app">
+			<h1 v-show="true">Verdadero!</h1>
+			<h1 v-show="false">Falso!</h1>
+		</div>
+		<script src="https://unpkg.com/vue@3.0.5/dist/vue.global.prod.js"></script>
+		<script>
+			const app = Vue.createApp({}).mount('#app');
+		</script>
+	</body>
+</html>

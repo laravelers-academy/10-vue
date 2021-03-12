@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>13 - Getter y Setter</title>
+</head>
+<body>
+
+	<div id="app">	
+		{{ fullName }}
+	</div>
+
+	<script src="https://unpkg.com/vue@next"></script>
+
+	<script>
+		
+		const app = Vue.createApp({
+			data () {
+				return {
+					name: 'Homero Raul',
+					last_name: 'Vargas Cruz'
+				}
+			},
+			computed: {
+				fullName: {
+					
+					get() {
+						return this.name + ' ' + this.last_name;
+					},
+
+					set(name) {
+						this.name = name.firstName;
+						this.last_name = name.lastName;
+					}
+
+				}
+			}
+		});
+
+		const vm = app.mount('#app');
+
+
+	</script>
+
+</body>
+</html>

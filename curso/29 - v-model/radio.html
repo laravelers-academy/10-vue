@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>29 - v-model </title>
+</head>
+<body>
+
+	<div id="app">
+
+		<input type="radio" id="radio_jorge" name="names" v-model="names" value="Jorge">
+		<label for="radio_jorge">Jorge</label>
+
+		<input type="radio" id="radio_raul" name="names" v-model="names" value="Raul">
+		<label for="radio_raul">Raul</label>
+
+		<input type="radio" id="radio_jesus" name="names" v-model="names" value="Jesús">
+		<label for="radio_jesus">Jesús</label>
+
+		<p> {{ names }} </p>
+		
+	</div>
+
+	<script src="https://unpkg.com/vue@next"></script>
+
+	<script>
+		
+		const app = Vue.createApp({
+			data() {
+				return {
+					names: []
+				}
+			}
+		});
+
+		const vm = app.mount('#app');
+
+
+	</script>
+
+</body>
+</html>

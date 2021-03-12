@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+
+		<div id="app">
+			<ul>
+				<li v-for="(item, index) in items">
+					{{ item.message }}
+				</li>
+			</ul>
+		</div>
+		
+		<script src="https://unpkg.com/vue@3.0.5/dist/vue.global.prod.js"></script>
+
+		<script>
+
+			const app = Vue.createApp({
+				data () {
+					return {
+						items: [
+							{message: 'Hola'},
+							{message: 'Mundo'},
+							{message: '!'}
+						]
+					}
+				},
+			}).mount('#app');
+
+		</script>
+	</body>
+</html>

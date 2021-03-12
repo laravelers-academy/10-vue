@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>v-model en componentes</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<div id="app">
+			<p>{{message}}</p>
+
+
+			<custom-input-component 
+				v-model="message"></custom-input-component>
+
+		</div>
+		<script src="https://unpkg.com/vue@3.0.5/dist/vue.global.js"></script>
+		<script>
+
+			App = {
+
+				data() {
+					return {
+						message: ''
+					}
+				}
+			}
+
+			const app = Vue.createApp(App);
+
+			app.component('CustomInputComponent', {
+				props: ['modelValue'],
+				emits: ['update:modelValue'],
+				template: `
+					<input v-model="value">
+				`,
+				computed: {
+					value: {
+						get() {
+							return this.modelValue;
+						},
+						set(value) {
+							this.$emit('update:modelValue', value)
+						}
+					}
+				}
+			})
+
+			app.mount('#app');
+
+		</script>
+	</body>
+</html>

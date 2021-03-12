@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>15 - Class Binding</title>
+	<style>
+		.active {
+			color: green;
+		}
+
+		.error {
+			color: red;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="app">
+		<my-component :class="{active: isActive}"></my-component>
+	</div>
+
+	<script src="https://unpkg.com/vue@next"></script>
+
+	<script>
+		
+		const app = Vue.createApp({
+			data () {
+				return {
+					isActive: true
+				}
+			}
+		});
+
+		app.component('my-component', {
+			template: `<p class="foo bar">Hola</p>`
+		});
+
+		const vm = app.mount('#app');
+
+
+	</script>
+
+</body>
+</html>

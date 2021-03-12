@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Curso de VueJS</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+
+		<div id="app">
+			{{ text }}
+
+			<button v-on:click="showName">Mostrar nombre</button>
+
+		</div>
+
+		
+		<script src="https://unpkg.com/vue@next"></script>
+
+		<script>
+			
+			const HelloWorld = {
+				data () {
+					return {
+						text: '¡Hola Mundo!'
+					}
+				},
+				methods: {
+					showName() 
+					{
+						this.text = 'Homero Raul';
+					}
+				}
+			}
+
+			const app = Vue.createApp(HelloWorld);
+
+			const vm = app.mount('#app');
+
+		</script>
+	</body>
+</html>

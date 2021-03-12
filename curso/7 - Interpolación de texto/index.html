@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>7 - Interpolación de texto</title>
+</head>
+<body>
+
+	<div id="app">
+		<p>{{ (age > 18) ? 'Mayor de edad' : 'Menor de edad' }}</p>
+		<span v-once>{{ name }}</span>
+	</div>
+
+	<script src="https://unpkg.com/vue@next"></script>
+
+	<script>
+		
+		const app = Vue.createApp({
+			data() {
+				return {
+					name: 'Homero',
+					age: 28,
+
+				}
+			}
+		});
+
+		const vm = app.mount('#app');
+
+
+	</script>
+
+</body>
+</html>

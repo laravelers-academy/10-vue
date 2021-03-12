@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>8 - Directivas</title>
+</head>
+<body>
+
+	<div id="app">
+			
+		<p v-if="show">Esto es un texto cualquiera</p>
+
+
+		<!--
+
+			v-bind:href="url"
+		-->
+		<a v-bind:[attrname]="url">Esto es un link</a><br />
+
+		<a :href="url">Esto es abreviatura</a><br />
+
+		<a :[attrname]="url">Esto es abr. y dinámico</a><br />
+
+
+		<form v-on:submit.prevent="submitForm">
+			<button type="submit">Enviar</button>
+		</form>
+
+		<form @submit.prevent="submitForm">
+			<button type="submit">Enviar</button>
+		</form>
+
+		<form @[submitevent].prevent="submitForm">
+			<button type="submit">Enviar</button>
+		</form>
+
+
+
+	</div>
+
+	<script src="https://unpkg.com/vue@next"></script>
+
+	<script>
+		
+		const app = Vue.createApp({
+			data() {
+				return {
+					show: true,
+					attrname: 'href',
+					url: 'https://laravelers.com',
+					submitevent: 'submit'
+				}
+			},
+			methods: {
+				submitForm(){
+					console.log('Formulario enviado');
+				}
+			}
+		});
+
+		const vm = app.mount('#app');
+
+
+	</script>
+
+</body>
+</html>

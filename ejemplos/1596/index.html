@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+
+		<div id="app">
+
+			<p>Cuenta: {{ count }}</p>
+
+			<button @click.stop.prevent="myEvent">Hacer algo</button>
+
+
+		</div>
+		
+		<script src="https://unpkg.com/vue@3.0.5/dist/vue.global.prod.js"></script>
+
+		<script>
+
+			const app = Vue.createApp({
+				data () {
+					return {
+						count: 0
+					}
+				},
+				methods: {
+					myEvent() {
+						console.log('Hi');
+					}
+				}
+			}).mount('#app');
+
+		</script>
+	</body>
+</html>

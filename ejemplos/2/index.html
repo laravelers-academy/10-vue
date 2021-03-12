@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Saludo y Despedida</title>
+	</head>
+	<body>
+
+		<div id="app">
+
+			<span v-bind:title="message">{{ greeting }}</span>
+			
+			<button v-on:click="changeGreeting">Cambiar</button>
+
+		</div>
+
+		<script src="https://unpkg.com/vue@3.0.5/dist/vue.global.js"></script>
+
+		<script>
+			
+			const Greeting = {
+
+				data() {
+					return {
+						greeting: 'Hola',
+						message: 'Esto es un mensaje'
+					}
+				},
+
+				methods: {
+
+					changeGreeting () {
+
+						this.greeting = 'Adios';
+
+					}
+
+				}
+			}
+
+			Vue.createApp(Greeting).mount('#app');
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>24 - v-for en template</title>
+</head>
+<body>
+
+	<div id="app">
+		<ul>
+			<template v-for="item in items" :key="item.id">
+				<li>{{ item.name }}</li>
+				<li>{{ item.message }}</li>
+			</template>
+		</ul>
+	</div>
+
+	<script src="https://unpkg.com/vue@next"></script>
+
+	<script>
+		
+		const app = Vue.createApp({
+			data() {
+				return {
+					items: [
+						{id: 1, name: 'Homero',  message: 'Esto es un mensaje'},
+						{id: 2, name: 'Raul',  message: 'Esto es un mensaje'},
+						{id: 3, name: 'Jesus',  message: 'Esto es un mensaje'},
+						{id: 4, name: 'Manuel',  message: 'Esto es un mensaje'},
+					]
+				}
+			}
+		});
+
+		const vm = app.mount('#app');
+
+
+	</script>
+
+</body>
+</html>

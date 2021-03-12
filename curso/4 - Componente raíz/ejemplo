@@ -1,0 +1,8 @@
+Root Component
+└─ TodoList
+   ├─ TodoItem
+   │  ├─ DeleteTodoButton
+   │  └─ EditTodoButton
+   └─ TodoListFooter
+      ├─ ClearTodosButton
+      └─ TodoListStatistics

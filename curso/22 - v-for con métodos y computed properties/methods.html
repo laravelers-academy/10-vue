@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>22 - v-for con métodos y computed properties</title>
+</head>
+<body>
+
+	<div id="app">
+		<ul v-for="numbers in sets">
+			<li v-for="number in even(numbers)">
+				{{ number }}
+			</li>
+		</ul>
+	</div>
+
+	<script src="https://unpkg.com/vue@next"></script>
+
+	<script>
+		
+		const app = Vue.createApp({
+			data() {
+				return {
+					sets: [[1,2,3,4,5],[6,7,8,9,10]]
+				}
+			},
+			methods: {
+				even(numbers) {
+					return numbers.filter( number => number % 2 === 0);
+				}
+			}
+		});
+
+		const vm = app.mount('#app');
+
+
+	</script>
+
+</body>
+</html>
